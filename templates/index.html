@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">#}
+    <link rel="stylesheet" href="static/style1.css">
+</head>
+<body>
+
+
+<div class="table-wrapper">
+    <table class="sticky-header sticky-column">
+        {% for teacher in teachers %}
+            <thead>
+            <h4><a href="update/{{ teacher.id }} ">{{ teacher.id }}</a></h4>
+            <tr>
+            <td><a href="delete/{{ teacher.id }} ">delete</a></td>
+            <th><h1>name: {{ teacher.name }}</h1></th>
+            <th><p>email : {{ teacher.email }}</p></th>
+            <th><p>phone : {{ teacher.phone }}</p></th>
+            <th><p>address : {{ teacher.address }}</p></th>
+            <th><p>educational_institution : {{ teacher.educational_institution }}</p></th>
+            <th><p>subject : {{ teacher.subject }}</p></th>
+            <th></th>
+            <th></th>
+        {% endfor %}
+        </tr>
+        </thead>
+    </table>
+    <a href="add_teacher/">Add Teacher</a>
+
+</div>
+</body>
+</html>
+
